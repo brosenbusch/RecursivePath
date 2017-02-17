@@ -5,12 +5,12 @@ function buildPath (p,n){
     let r = Math.random();
     if (r <= p){
       path[a] = false;
-      //console.log("FLEMDAWG ATE YA!");
     }
     else{
       path[a] = true;
     }
   }
+  path[n-1]=true;
   return path;
 }
 
@@ -22,7 +22,7 @@ function stroll(path,c){
     return 0;
   }
   else{
-    return stroll(path,c++);
+    return stroll(path,c+1);
   }
 }
 
@@ -37,7 +37,7 @@ function rsj (path,c){
     return 0;
   }
   else{
-    return rsj(path,c++) + rsj(path,c+2) + rsj(path,c+5);
+    return rsj(path,c+1) + rsj(path,c+2) + rsj(path,c+5);
   }
 }
 
